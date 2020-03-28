@@ -655,12 +655,12 @@ const lifeBarStatus = ()=>{
   //  actualiza el width del barra en el CSS 
    lifeBar.style.width = `${lifeBarTime}%`;
 
-   if(lifeBarTime < 3){
+   if(lifeBarTime < 2){
     play$Control_Sound(failSound,'play'); 
    }
 
   //  si la barra de vida se descarga ... 
-   if (lifeBarTime < 2) {
+   if (lifeBarTime < 1) {
 
    resetAllVariables()
 
