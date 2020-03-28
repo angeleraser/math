@@ -412,7 +412,7 @@ function generateRandomExcercise(){
   let correctBoxIndex = Math.floor(Math.random()*4); 
 
   // para evitar que las opciones se repitan
-  const differentNumber = [(-4),(-1),(-2)]; 
+  const differentNumber = [(10),(-1),(-10)]; 
   let differentNumberIndex = -1;
   const randomOptionNumber = (i) => (operationAnswer - differentNumber[i]);
 
