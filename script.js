@@ -911,7 +911,8 @@ function generateRankLetter(){
         unlockGameMode(operatorsIndex);
       }
       else{
-        rankLetterStyle('S','gold','goldenrod')
+        rankLetterStyle('S','gold','goldenrod');
+        unlockGameMode(operatorsIndex);
       }
       break;
     case 1:
@@ -1299,8 +1300,8 @@ function setAtimationExercise(duration){
   currentExercise.style.animationDuration  = `.${duration}s`;
   
   if( levelMusic.currentTime > 62){
-    optionBox.forEach( text => {
-      text.style.animationDuration = `.${duration}s`;
+    optionBox.forEach( box => {
+      box.style.animationDuration = `.${duration}s`;
     } )
   }
   
