@@ -885,7 +885,7 @@ a{
 @keyframes answerAnimation{
   100%{
     color:red;
-    transform: scale(.98);
+    transform: scale(.96);
   }
 }
 @keyframes adicionBgIntensity1{

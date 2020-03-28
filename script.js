@@ -114,7 +114,7 @@ let currentExercise              = document.getElementById('current');
 
 
 // INDICES DE DIFICULTADES, FACIL, MEDIO, DIFICIL, UNIDAD e intervalo de LifeBar
-let  easy      = 0, easyUnity   = 10, easyLifeBar     = 99999; 
+let  easy      = 0, easyUnity   = 10, easyLifeBar     = 150; 
 let medium     = 1, mediumUnity = 15, mediumLifeBar   = 100;
 let  hard      = 2, hardUnity   = 15, hardLifeBar     = 50;
 
@@ -851,6 +851,7 @@ function resetAllVariables (){
   scorePoints = 0; // puntaje 
   rankLetterText.innerHTML =''; // rango
   excercisesList = [];
+  answersList = [];
   isPlaying = true;
   comboMultiplierDown(); // multiplicador
   // remueve los estilos del rango SS 
@@ -1057,6 +1058,7 @@ function displayScreenButton(button,screen,sound){
       play$Control_Sound(menuthemeMusic,'play');
       // limpia los intervalos del juego 
       clearIntervals();
+      resetAllVariables();
     }
 
     // si el boton es para "ir a la pantalla de inicio" en la de seleccion de modos 
