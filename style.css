@@ -970,7 +970,7 @@ a{
 
 @media screen and (max-width:480px){
   .game_container{
-    height: 99vh;
+    height: 100vh;
     width: 100vh;
   }
 }
