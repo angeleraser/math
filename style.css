@@ -770,10 +770,6 @@ a{
 }
 /* Aqui estan las clases de las animaciones  */
 
-/* Para las opciones  */
-.answer1{
-  animation-name: answerAnimation 1s infinite;
-}
 
 .answer-boxCorrect{
   background-color: var(--correct);

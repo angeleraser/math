@@ -858,6 +858,10 @@ function resetAllVariables (){
   removeLetterStyles();
   gameScreen.style.animationName = '';
   continueButton.style.display = 'flex';
+  setAtimationExercise(0)
+  optionBox.forEach ( box =>{
+    box.style.animationDuration = ''
+  })
 
  
   clearIntervals()
