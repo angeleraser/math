@@ -147,8 +147,8 @@ let numberUnityCount = 0;
 let acerted = 0; 
 let failed = 0; 
 let scorePoints = 0; 
-let temporizerTime = 80;
-let gameTime       = 75;
+let temporizerTime = 95;
+let gameTime       = 90;
 let combo = 0;
 let maxCombo = 1;
 let lifeBarTime = 100;
@@ -602,7 +602,7 @@ const temporizer = () => {
    temp = setInterval(() =>{
 
     // actualizar el numero del tiempo en el HTML 
-     timer.innerHTML = `${temporizerTime.toFixed(1)}s`;
+     timer.innerHTML = `${gameTime.toFixed(1)}s`;
 
     //  restar para hacer de cuenta regresiva 
      temporizerTime-=0.1;
@@ -613,14 +613,15 @@ const temporizer = () => {
       switchBackgroundColors(levelMusic.currentTime);
    }
    //  si el tiempo llega a 0  
-   if (gameTime < 3) {
+   if (gameTime < 0.1) {
      show$Hidden_AllGameScreenChildren();
+     clearInterval(barStatus)
    }
    
-   if(temporizerTime < 1 ){
+   if(temporizerTime < 3 ){
 
     //  finalizar los intervalos de temp y barStatus 
-     clearIntervals();
+    clearIntervals();
 
     //  Establecer los resultados en la pantalla final
      printFinalScreenInfo();
@@ -658,12 +659,7 @@ const lifeBarStatus = ()=>{
   //  si la barra de vida se descarga ... 
    if (lifeBarTime < 1) {
 
-   resetAllVariables()
-
    play$Control_Sound(failSound,'play'); 
-
-   // finaliza el temporizador y la barra
-   clearIntervals();
 
    play$Control_Sound(levelMusic,'pause');
 
@@ -842,8 +838,8 @@ function playGame (){
 function resetAllVariables (){
 
   numberUnityCount = 0; //incrementa la unidad
-  temporizerTime = 80;     // tiempo de la partida
-  gameTime = 80; //tiempo de juego
+  temporizerTime = 95;     // tiempo de la partida
+  gameTime = 90; //tiempo de juego
   lifeBarTime = 100;   // barra de vida
   acerted = 0;    // aciertos
   failed  = 0;   // fallos
@@ -858,6 +854,9 @@ function resetAllVariables (){
   removeLetterStyles();
   gameScreen.style.animationName = '';
   continueButton.style.display = 'flex';
+  optionBox.forEach( box =>{
+    box.style.animationDuration='0'
+  })
   setAtimationExercise(0);
  
   clearIntervals()
