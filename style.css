@@ -48,7 +48,7 @@
 
   /* Colores ded los interruptores  */
   --switchOn : hsl(150,75%,65%);
-  --switchBaseOn:hsl(150,20%,30%);
+  --switchBaseOn:hsl(150,15%,20%);
   --switchOff : hsl(150,50%,100%);
   --switchBaseOff:hsl(150,0%,30%);
 }
@@ -752,6 +752,7 @@ a{
   justify-content: center;
   overflow: hidden;
   position: relative;
+  animation : answerAnimation infinite;
 }
 
 /* Puntos de las opciones  */
@@ -763,13 +764,17 @@ a{
   position: absolute;
   width: 40%;
 }
-.button_finalScreen
+.button_finalScreen .icon{
+  height: 100%;
+  width:100%;
+}
 /* Aqui estan las clases de las animaciones  */
 
 /* Para las opciones  */
-.answer{
-  animation: answerAnimation infinite;
+.answer1{
+  animation-name: answerAnimation 1s infinite;
 }
+
 .answer-boxCorrect{
   background-color: var(--correct);
 }
@@ -879,7 +884,8 @@ a{
 }
 @keyframes answerAnimation{
   100%{
-    transform: scale(1.2);
+    color:red;
+    transform: scale(.98);
   }
 }
 @keyframes adicionBgIntensity1{

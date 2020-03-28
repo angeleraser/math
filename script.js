@@ -114,7 +114,7 @@ let currentExercise              = document.getElementById('current');
 
 
 // INDICES DE DIFICULTADES, FACIL, MEDIO, DIFICIL, UNIDAD e intervalo de LifeBar
-let  easy      = 0, easyUnity   = 10, easyLifeBar     = 150; 
+let  easy      = 0, easyUnity   = 10, easyLifeBar     = 99999; 
 let medium     = 1, mediumUnity = 15, mediumLifeBar   = 100;
 let  hard      = 2, hardUnity   = 15, hardLifeBar     = 50;
 
@@ -653,11 +653,14 @@ const lifeBarStatus = ()=>{
   //  restar para descargar la barra 
    lifeBarTime-=1.5;
 
+
   //  actualiza el width del barra en el CSS 
    lifeBar.style.width = `${lifeBarTime}%`;
 
   //  si la barra de vida se descarga ... 
    if (lifeBarTime < 1) {
+
+    clearIntervals()
 
    play$Control_Sound(failSound,'play'); 
 
@@ -854,7 +857,7 @@ function resetAllVariables (){
   removeLetterStyles();
   gameScreen.style.animationName = '';
   continueButton.style.display = 'flex';
-  setAtimationExercise(0);
+
  
   clearIntervals()
   console.log('resetAllVariables')
@@ -1184,7 +1187,7 @@ function switchBackgroundColors(time) {
 
   }
 
-  if(time > 39){
+  if(time > 39.3){
 
     switchBgColorAnimation(3,35);
     setAtimationExercise(35);
@@ -1289,13 +1292,12 @@ function setAtimationExercise(duration){
   // el ejercicio
   currentExercise.style.animationDuration  = `.${duration}s`;
   
-  // las opciones 
- if (levelMusic.currentTime > 62){
-  optionBoxText.forEach( box  =>{
-    box.style.animationDuration = `.${duration}s`;})
+  if( levelMusic.currentTime > 62){
+    optionBox.forEach( text => {
+      text.style.animationDuration = `.${duration}s`;
+    } )
   }
-
-
+  
 }
 
 // Esta es para ocultar los elementos de la pantalla de juego 
