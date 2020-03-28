@@ -602,7 +602,7 @@ const temporizer = () => {
    temp = setInterval(() =>{
 
     // actualizar el numero del tiempo en el HTML 
-     timer.innerHTML = `${gameTime.toFixed(1)}s`;
+     timer.innerHTML = `${temporizerTime.toFixed(1)}s`;
 
     //  restar para hacer de cuenta regresiva 
      temporizerTime-=0.1;
@@ -613,11 +613,11 @@ const temporizer = () => {
       switchBackgroundColors(levelMusic.currentTime);
    }
    //  si el tiempo llega a 0  
-   if (gameTime < 1) {
+   if (gameTime < 3) {
      show$Hidden_AllGameScreenChildren();
    }
    
-   if(temporizerTime < 3 ){
+   if(temporizerTime < 1 ){
 
     //  finalizar los intervalos de temp y barStatus 
      clearIntervals();
@@ -655,14 +655,12 @@ const lifeBarStatus = ()=>{
   //  actualiza el width del barra en el CSS 
    lifeBar.style.width = `${lifeBarTime}%`;
 
-   if(lifeBarTime < 2){
-    play$Control_Sound(failSound,'play'); 
-   }
-
   //  si la barra de vida se descarga ... 
    if (lifeBarTime < 1) {
 
    resetAllVariables()
+
+   play$Control_Sound(failSound,'play'); 
 
    // finaliza el temporizador y la barra
    clearIntervals();
@@ -845,7 +843,7 @@ function resetAllVariables (){
 
   numberUnityCount = 0; //incrementa la unidad
   temporizerTime = 80;     // tiempo de la partida
-  gameTime = 75; //tiempo de juego
+  gameTime = 80; //tiempo de juego
   lifeBarTime = 100;   // barra de vida
   acerted = 0;    // aciertos
   failed  = 0;   // fallos
