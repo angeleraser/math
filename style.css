@@ -578,7 +578,7 @@ background-color: hsl(240, 15%, 35%);
 .infoContainer{
   display: grid;
   grid: 2fr 1fr 1fr / 100%;
-  margin-left: 20px;
+  margin-left: 30px;
   height: 80%;
   width: 90%;
 
