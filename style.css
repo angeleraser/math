@@ -1,0 +1,982 @@
+/* PALETA DE COLORES  */
+:root{
+
+  /* Colores de las letras y opecion correcta e incorrecta  */
+
+  --bg:hsla(360,0%,85%,.8);
+  --bg2:hsl(360,0%,85%);
+  --secondBackground: hsl(240, 15%, 30%);
+  --correct: hsl(120, 80%,35%);
+  --wrong:  hsl(0, 90%,60%);
+
+  /* Colores del modo adicion  */
+  --adicion: hsl(210, 80%, 25%);
+  --adicionPause: hsla(210, 80%, 25%,.9);
+  --adicion1: hsl(210, 80%, 15%);
+  --adicion2: hsl(210, 80%, 35%);
+  --adicion3: hsl(210, 80%, 50%);
+  --adicion4: hsl(210, 80%, 65%);
+
+/* Colores el modo sustraccion  */
+  --sustraccion: hsl(0,60%,40%);
+  --sustraccionPause: hsla(0,60%,40%,.9);
+  --sustraccion1: hsl(0,80%,30%);
+  --sustraccion2: hsl(0,80%,50%);
+  --sustraccion3: hsl(0,80%,60%);
+  --sustraccion4: hsl(0,80%,70%);
+
+/* Colores del modo de multiplicacion  */
+  --multiplicacion:hsl(30,70%,40%);
+  --multiplicacionPause:hsla(30,70%,40%,.9);
+  --multiplicacion1:hsl(30,80%,30%);
+  --multiplicacion2:hsl(30,80%,50%);
+  --multiplicacion3:hsl(30,80%,60%);
+  --multiplicacion4:hsl(30,80%,70%);
+
+
+  /* Coloresd el modo de division  */
+  --division: hsl(150, 100%,20%);
+  --divisionPause: hsla(150, 100%,20%,.9);
+  --division1: hsl(150, 100%,10%);
+  --division2: hsl(150, 100%,30%);
+  --division3: hsl(150, 100%,40%);
+  --division4: hsl(150, 100%,60%);
+
+  /* Colores del modo aleatorio  */
+  --aleatorio: hsl(185, 60%, 30%);
+  --aleatorioPause: hsl(185, 60%, 30%,.9);
+
+  /* Colores ded los interruptores  */
+  --switchOn : hsl(150,75%,65%);
+  --switchBaseOn:hsl(150,20%,30%);
+  --switchOff : hsl(150,50%,100%);
+  --switchBaseOff:hsl(150,0%,30%);
+}
+
+/* Contenedor principal */
+.container{
+  align-items: center;
+  background-color:rgb(22, 22, 22);
+  font-family: sans-serif;
+  display: flex;  
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+/* Contenedor del juego y las pantallas */
+.game_container{
+  align-items: center;
+  background-color: var(--bg);
+  display: flex;
+  flex-wrap: wrap;
+  height: 600px;
+  justify-content: space-around;
+  box-shadow: 1px -2px 5px black inset;
+  border-radius: 5px;
+  width: 400px;
+  overflow: hidden;
+  position: relative;
+}
+/* Contenedor de los modos de juego */
+.game-modes-container{
+  align-content:space-around;
+  display: grid;
+  grid: repeat(3, 25%) / repeat(2, 45%);
+  flex-wrap: wrap;
+  grid-auto-rows: 45%;
+  justify-content: space-around;
+  height: 90%;
+  width: 95%;
+}
+/* elementos del contenedor  */
+.choosenModeText{
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px dashed white;
+  color: var(--bg2);
+  font-size: 1.2em;
+  font-style: italic;
+  width: 95%;
+  height: 10%;
+}
+/* Caja de modos de juego*/
+.button{
+  align-content: center;
+  color: #fff;
+  font-weight: bold;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  border-radius: 5px;
+  box-shadow: 1px -2px 5px black inset;
+  position: relative;
+  overflow: hidden;
+}
+
+.button.adicion{
+  background-color: var(--adicion);
+}
+.button.adicion:hover{
+  background-color: hsl(210, 80%, 30%);
+}
+.button.sustraccion{
+  background-color: var(--sustraccion);
+}
+.button.sustraccion:hover{
+  background-color:hsl(0,60%,50%);
+}
+.button.multiplicacion{
+  background-color: var(--multiplicacion);
+}
+.button.multiplicacion:hover{
+  background-color: hsl(30,70%,50%);
+}
+.button.division{
+  background-color: var(--division);
+}
+.button.division:hover{
+  background-color: hsl(150, 100%,25%);
+}
+.button.aleatorio{
+  background-color: var(--aleatorio);
+}
+.button.aleatorio:hover{
+  background-color:hsl(185, 60%, 35%) ;
+}
+
+.button:active{
+  transform: scale(.97);
+}
+.dif-icon:active,.answer-box:active{
+  transform: scale(.98);
+}
+
+/* Boton para ir a la pantalla de historial de puntajes  */
+.score-screen-button{
+  align-items: center;
+  align-self: center;
+  justify-self: center;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  background-color:var(--secondBackground);
+  height: 40%;
+  width: 90%;
+}
+.arrow-icon{
+height: 40px;
+width: 40px;
+}
+.score-screen-button:hover{
+background-color: hsl(240, 15%, 35%);
+
+}
+
+/* Dificultades en las cajas de los modos*/
+.dif-container{
+  bottom: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-around;
+  box-shadow: -1px 1px 5px rgb(51, 51, 51) inset;
+  position: absolute;
+  height: 100%;
+  transition: .3s all;
+  width: 100%;
+}
+.adicion .dif-container{
+  background-image: linear-gradient(var(--bg2), var(--adicion));
+}
+.sustraccion .dif-container {
+  background-image: linear-gradient(var(--bg2), var(--sustraccion));
+}
+.multiplicacion .dif-container{
+  background-image: linear-gradient(var(--bg2), var(--multiplicacion));
+}
+.division .dif-container{
+  background-image: linear-gradient(var(--bg2), var(--division));
+}
+.aleatorio .dif-container{
+  background-image:linear-gradient(var(--bg2), var(--aleatorio));
+}
+.dif{
+  color: black;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  border-top: 1px solid var(--secondBackground);
+  border-top-left-radius: 4px;
+  flex: 1 1 ;
+  width: 100%;
+  position: relative;
+}
+
+/* Icono de lista para desplegar las dificultades */
+.dif-icon {
+  z-index: 50;
+  align-self: flex-start;
+  top: 5%;
+  left: 3%;
+  position: absolute;
+  height: 25px;
+  width: 25px;
+}
+.dif-text{
+  align-items: center;
+  /* box-shadow: 0 -5px 10px var(--bg) inset; */
+  border-top: 2px solid #cccccc;
+  border-top-left-radius: 4px;
+  display: flex;
+  height: 70%;
+  justify-content: center;
+  position: absolute;
+  top: 30%;
+  width: 97%;
+}
+
+.locked-mode{
+  background-color: rgba(5, 5, 5,.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 80;
+}
+
+.locked-mode .icon{
+  height: 40%;
+}
+/* Boton para devolverse a la pantalla principal  */
+.back-ButtonGameModeScreen{
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  border-radius: 50%;
+  box-shadow: 1px -2px 5px black inset;
+  background-color: hsl(200, 80%, 25%);
+  position: absolute;
+  left: 5%;
+  height: 40px;
+  width: 40px;
+}
+.back-ButtonGameModeScreen:active{
+  transform: scale(.95);
+}
+/* Tamaño del icono  */
+.icon{
+  height: 60%;
+}
+/*Estilo de Botones de la pantalla de reintentar */
+.button_retryScreen{
+  align-items: center;
+  display: flex;
+  font-style: italic;
+  justify-content: center;
+  background-color: white;
+  height: 8%;
+  margin-bottom: 10%;
+  width: 50%;
+}
+/* Estilo de botones de la pantalla final de puntuacion*/
+.button_finalScreen{
+  align-self: flex-end;
+  background-color: white;
+  margin-bottom: 30px;
+  height: 6%;
+  padding: 10px;
+  width: 10%;
+}
+/* Contenedor que muetsra la operacion */
+.game_container-screen{
+  align-items: center;
+  background-color: var(--bg-screen);
+  color: black;
+  display: flex;
+  font-size: 3.5em;
+  height: 50%;
+  justify-content: center;
+  position: relative;
+  width: 95%;
+}
+/* operacion  */
+.current{
+  animation: exerciseAnimation infinite;
+}
+/* Temporizador del juego  */
+.timer{
+  color:white;
+  display: flex;
+  font-size: .35em;
+  height: 15%;
+  justify-content: flex-end;
+  left:70%;
+  position: absolute;
+  top: 0;
+  width: 30%;
+}
+/* Contenedor de la barra de vida*/
+.life-bar{
+  border-top-right-radius:15px;
+  border-bottom-right-radius:15px;
+  display: flex;
+  align-items: center;
+  height: 6%;
+  position: absolute;
+  left: 0%;
+  top: 0%;
+  width: 85%;
+}
+/* barra de vida */
+.bar{
+  border-top-right-radius:15px;
+  border-bottom-right-radius:15px;
+  background-color: var(--bar);
+  height: 50%;
+  width: 80%;
+}
+/* Combo  */
+.multiplicador{
+  color: var(--bg2);
+  display: flex;
+  font-size: .5em;
+  height: 10%;
+  justify-content: flex-start;
+  left:3%;
+  position: absolute;
+  top: 93%;
+  width: 20%;
+}
+
+/* Boton de pausa  */
+.pauseButton{
+  position: absolute;
+  border-radius: 50%;
+  left: 85%;
+  bottom: -3%;
+  height: 40px;
+  width: 40px;
+}
+.pauseIcon{
+  height: 60%;
+  width: 50%;
+}
+
+/* Pantalla de 3,2,1 */
+.transition-screen{
+  display: none;
+  color:var(--bg2);
+  font-size:10em;
+}
+/* Contenedor de los resultados de puntaje */
+.score-screen{
+  color:white;
+  font-weight: 600;
+  align-self:flex-start;
+  background-color: var(--secondBackground);
+  box-shadow: 1px -2px 5px black inset;
+  display: flex;
+  border-radius: 5px;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  height: 75%;
+  position: absolute;
+  top: 5%;
+  width: 85%;
+}
+/* Nombre del modo  */
+.name-mode{
+  border-bottom: 2px solid var(--bg);
+  border-bottom-left-radius: 4px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  height: 10%;
+  width: 99%;
+}
+/* Contenedor de los resultados  */
+.data-container{
+  align-items:center;
+  display: grid;
+  grid: repeat(4, 25%) / 80%;
+  height: 49.3%;
+  justify-content: center;
+}
+/* Elementos del contenedor  */
+.score{
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--bg);
+  padding-bottom: 5px;
+}
+.score:last-child{
+  border: none;
+}
+/* Contenedor del rango  */
+.rank{
+  display: grid;
+  grid: 1fr / 40% 60%;
+  background-color: var(--secondBackground);
+  height: 39%;
+  position: relative;
+  border-top-right-radius: 100px;
+  border-top-left-radius:0;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  box-shadow: 1px -2px 5px black inset;
+  width: 100%;
+  overflow: hidden;
+}
+.rank-text{
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  font-style: italic;
+}
+.rank-letter{
+  font-size: 5em;
+  font-style: italic;
+  font-weight: bold;
+  margin: auto;
+  transform: translateY(-150%);
+  transition: .8s all;
+}
+
+/* Contenedor de botones de la pantalla principal  */
+.main_screenButtons-container{
+  align-items: center;
+  display: flex;
+  justify-content: space-around;
+  height: 20%;
+  width: 90%;
+}
+/* Botones  */
+.button_main_screen{
+  align-items: center;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  box-shadow: 1px -2px 5px black inset;
+  color: white;
+  height: 50px;
+  width: 50px;
+  position: relative;
+}
+/* Texto  */
+.button_text{
+  position:absolute;
+  font-weight: bold;
+  top: 115%
+}
+
+/* Posicion para los botones de devolverse  */
+.back-button{
+  top: 2%
+}
+/* Boton de JUGAR */
+.play{
+  align-self: flex-end;
+  order:1;
+  font-size: 1.2em;
+  height: 90px;
+  width: 90px;
+}
+#play-icon{
+  border-radius: 50%;
+  height: 80%;
+}
+/* Boton de CONFIGURACION  */
+.settings{
+  font-size: .7em;
+  order: 2;
+}
+#settings-icon{
+  height: 75%;
+}
+/* Boton de INFORMACION  */
+.info{
+  font-size: .7em;
+}
+#info-icon{
+  height: 70%;
+}
+/* Texto de creditos   */
+.developedBy{
+  color: var(--bg);
+  font-style: italic;
+  font-size: .8em;
+  position: absolute;
+  top: 95%;
+}
+/* Titulo del juego  */
+.game-title{
+  color: var(--bg);
+  font-size: 4.5em;
+  position: absolute;
+  bottom: 70%;
+}
+/* Icono de los botones  */
+.icon-button:active{
+  transform: scale(.95);
+}
+
+/* ------ PANTALLAS DEL JUEGO ----- */
+
+/* Principal  */
+.main_screen{
+  display: flex;
+  background-color: hsl(200, 80%, 25%);
+}
+/* modos de juego  */
+.gameMode-screen{
+  display: none;
+  background-color: hsl(200, 80%, 25%);
+}
+/* pantalla de juego  */
+.game-screen{
+  display: none;
+  animation: linear infinite;
+}
+/* Pantalla del historial de puntajes   */
+.scoreBoardScreen{
+  display: none;
+  background-color: hsl(200, 80%, 25%);
+  flex-direction: column;
+  justify-content: center;
+}
+/* pantalla de reintentar  */
+.retry-screen{
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+}
+/* De informacion  */
+.infoScreen{
+  display: none;
+  background-color: hsl(200, 80%, 30%);
+  
+}
+/* pantalla final  */
+.final-score-screen{
+  align-items: flex-end;
+  display: none;
+  background-color: black;
+  position: relative;
+}
+/* settings screen */
+.settingScreen{
+  display: none;
+  flex-direction: column;
+  background-color: hsl(200, 80%, 30%);
+  justify-content: space-around;
+}
+
+/* Elementos de la pantalla de informacion  */
+.infoContainer{
+  display: grid;
+  grid: 2fr 1fr 1fr / 100%;
+  margin-left: 20px;
+  height: 80%;
+  width: 90%;
+
+}
+.infoItem{
+  display: flex;
+  flex-direction: column;
+  justify-content:space-around;
+  width: 90%;
+}
+.info_item_container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: space-around;
+  height: 100%;
+  width: 100%;
+}
+
+.infoTitle{
+  font-size: 1em;
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  justify-content: center;
+  margin: 0;
+  height: 40px;
+  box-shadow: 1px -2px 5px black inset;
+}
+.autor{
+  font-weight: bold;
+  margin-left:4px;
+}
+a{
+  font-weight: bold;
+  color: black;
+  /* text-decoration: none; */
+  font-size: 1em;
+}
+.infoText{
+  /* border: 1px solid black; */
+  margin: 0 0 0 6px;
+  line-height: 1.5;
+  width: 100%;
+  font-size: 1em;
+}
+.socialLinks-icons{
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+}
+
+/* Elementos de la pantalla de Historial de puntaje  */
+
+.tableTitle{
+  position: absolute;
+  font-style: italic;
+  color: hsl(30,70%,40%);
+  font-size: 1.5em;
+  top: 3%;
+}
+.scoreBoardList{
+  display: grid;
+  font-size: .7em;
+  grid: 100% / repeat(3, 1fr);
+  height: 5%;
+  width: 90%;
+}
+.item{
+  color: black;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+}
+.scoreBoardContainer{
+  display: grid;
+  grid: 10% / 1fr;
+  grid-auto-rows: 10%; 
+  align-content: flex-start;
+  height: 75%;
+  width: 85%;
+  overflow: scroll;
+}
+.data-item{
+  border-bottom: 1px solid black;
+  display: grid;
+  font-size: .7em;
+  grid: 1fr / repeat(3, 1fr);
+  width: 100%;
+}
+.data{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.data-name{
+  justify-self: flex-start;
+}
+
+/* Elementos de la pantalla de configuracion */
+.configurationTitle{
+  font-weight: bold;
+  position:absolute;
+  display: flex;
+  font-style: italic;
+  align-items: center;
+  border-bottom: 1px solid black;
+  justify-content: center;
+  width: 60%;
+  top: 3%;
+}
+.settingsContainer{
+  display: grid;
+  height: 50%;
+  width: 90%;
+  align-content: space-around;
+  grid: repeat(3, 20%) / 1fr;
+}
+.configItem{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border-radius: 10px;
+  font-size: .9em;
+  font-weight: bold;
+  box-shadow: 1px -2px 5px black inset;
+}
+/* Estilos del los swtich  */
+.switchButtonContainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  width: 80px;
+}
+.switchBase{
+  height: 30%;
+  width: 50%;
+  background-color: var(--switchBaseOn);
+  display: flex;
+  align-items: center;
+  border-radius:20px;
+}
+.switchCircle{
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color:var(--switchOn);
+  transform: translateX(70%);
+  transition: all .5s;
+}
+/* CONTENEDOR GRID DE RESPUESTAS  */
+.game_container-keyboard{
+  align-content: center;
+  display: grid;
+  grid-gap:6px 6px;
+  grid: repeat(2, 48%) / repeat(2, 48%);
+  height: 45%;
+  justify-content: center;
+  width: 95%;
+}
+/* Opciones de la operacion  */
+.answer-box{
+  align-items: center;
+  box-shadow: -1px 1px 5px rgb(51, 51, 51);
+  background-color:var(--bg2);
+  color: black;
+  display: flex;
+  font-size: 2.5em;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Puntos de las opciones  */
+.points-box{
+  display: none;
+  font-size: .4em;
+  height: 15%;
+  justify-content: center;
+  position: absolute;
+  width: 40%;
+}
+
+/* Aqui estan las clases de las animaciones  */
+
+/* Para las opciones  */
+.answer{
+  animation: answerAnimation infinite;
+}
+.answer-boxCorrect{
+  background-color: var(--correct);
+}
+.answer-boxWrong{
+  animation: wrong .5s infinite;
+  background-color: var(--wrong);
+}
+.point-animationUp{
+  animation: pointUp .7s linear;
+  color:lime;
+  display: flex;
+  font-weight: bold;
+  top: 10%;
+  left: 60%;
+}
+.point-animationDown{
+  animation: pointDown .7s linear ;
+  color:red;
+  display: flex;
+  font-weight: bold;
+  top:70%;
+  left:-5%;
+}
+/* Para la animacion del rango   */
+.rankLetterShow{
+  animation: showLetter 2s linear forwards;
+}
+
+/* La barra de vida   */
+.lifeBarUp{
+ animation: barChargeUp .7s infinite;
+}
+.lifeBarDown{
+  animation: barChargeDown .7s infinite;
+}
+
+/* Combo break  */
+.comboBreak{
+  animation: comboBreak .7s linear;
+}
+/* Combo Up */
+.comboUp{
+  animation: comboUp .5s linear;
+}
+
+/* Para la operacion en pantalla */
+.currentExcerciseAnimation{
+  animation: beatUp .2s linear infinite;
+}
+
+/* Para el titulo del juego  */
+.mainThemeAnimation{
+  animation: gameTitle .43s  infinite;
+}
+
+
+/* ANIMACIONES PARA LAS CLASES ANTERIORES  */
+
+@keyframes pointUp {
+  100%{
+    top:-10%;
+    left: 90%;
+  }
+}
+@keyframes pointDown{
+  100%{
+    left: -25%;
+    top: 100%;
+  }
+}
+@keyframes comboBreak {
+  100%{
+  color:red;
+  top: 140%;  
+  }
+}
+@keyframes comboUp {
+  100%{
+    color: gold;
+    transform: scale(1.2);
+  }
+}
+@keyframes barChargeUp{
+  100%{
+    background-color:var(--correct);
+    transform: scale(1.01);
+  }
+}
+@keyframes barChargeDown{
+  100%{
+    background-color:var(--wrong);
+    transform: scale(.99);
+  }
+}
+@keyframes showLetter{
+  95%{
+    transform: translateY(10%);
+  }
+  100%{
+    transform: translateY(0%);
+  }
+}
+@keyframes exerciseAnimation{
+  100%{
+    transform: scale(1.2);
+  }
+}
+@keyframes answerAnimation{
+  100%{
+    transform: scale(1.2);
+  }
+}
+@keyframes adicionBgIntensity1{
+  100%{
+    background-image: linear-gradient(var(--secondBackground), var(--adicion1));
+  }
+}
+@keyframes adicionBgIntensity2{
+  100%{
+    background-image: linear-gradient(var(--secondBackground), var(--adicion2));
+  }
+}
+@keyframes adicionBgIntensity3{
+  100%{
+    background-image: linear-gradient(var(--secondBackground), var(--adicion3));
+  }
+}
+@keyframes adicionBgIntensity4{
+  100%{
+    background-image: linear-gradient(var(--secondBackground), var(--adicion4));
+  }
+}
+@keyframes sustraccionBgIntensity1{
+  100%{
+    background-image: linear-gradient(var(--secondBackground), var(--sustraccion1));
+  }
+}
+@keyframes sustraccionBgIntensity2{
+  100%{
+    background-image: linear-gradient(var(--secondBackground), var(--sustraccion2));
+  }
+}
+@keyframes sustraccionBgIntensity3{
+  100%{
+    background-image: linear-gradient(var(--secondBackground), var(--sustraccion3));
+  }
+}
+@keyframes sustraccionBgIntensity4{
+  100%{
+    background-image: linear-gradient(var(--secondBackground), var(--sustraccion4));
+  }
+}
+@keyframes multiplicacionBgIntensity1{
+  100%{
+    background-image: linear-gradient(var(--secondBackground), var(--multiplicacion1));
+  }
+}
+@keyframes multiplicacionBgIntensity2{
+  100%{
+    background-image: linear-gradient(var(--secondBackground), var(--multiplicacion2));
+  }
+}
+@keyframes multiplicacionBgIntensity3{
+  100%{
+    background-image: linear-gradient(var(--secondBackground), var(--multiplicacion3));
+  }
+}
+@keyframes multiplicacionBgIntensity4{
+  100%{
+    background-image: linear-gradient(var(--secondBackground), var(--multiplicacion4));
+  }
+}
+@keyframes divisionBgIntensity1{
+  100%{
+    background-image: linear-gradient(var(--secondBackground), var(--division1));
+  }
+}
+@keyframes divisionBgIntensity2{
+  100%{
+    background-image: linear-gradient(var(--secondBackground), var(--division2));
+  }
+}
+@keyframes divisionBgIntensity3{
+  100%{
+    background-image: linear-gradient(var(--secondBackground), var(--division3));
+  }
+}
+@keyframes divisionBgIntensity4{
+  100%{
+    background-image: linear-gradient(var(--secondBackground), var(--division4));
+  }
+}
+@keyframes gameTitle{
+  100%{
+    transform: scale(1.1);
+  }
+}
+
+@media screen and (max-width:480px){
+  .game_container{
+    height: 100vh;
+    width: 100vh;
+  }
+}
+
+@media screen and (max-height:600px){
+  .game_container{
+    height: 100vh;
+  }
+}
