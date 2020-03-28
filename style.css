@@ -47,8 +47,8 @@
   --aleatorioPause: hsl(185, 60%, 30%,.9);
 
   /* Colores ded los interruptores  */
-  --switchOn : hsl(150,75%,65%);
-  --switchBaseOn:hsl(150,15%,20%);
+  --switchOn : hsl(150,75%,70%);
+  --switchBaseOn:hsl(150,5%,30%);
   --switchOff : hsl(150,50%,100%);
   --switchBaseOff:hsl(150,0%,30%);
 }
