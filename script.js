@@ -906,7 +906,7 @@ function generateRankLetter(){
   // determinara un rango basado en la cantidad de fallos 
   switch (failed) {
     case 0:
-      if(acerted >= 30){
+      if(acerted >= 25){
         rankLetterStyle('SS','gold','goldenrod');
         unlockGameMode(operatorsIndex);
       }
@@ -1422,7 +1422,7 @@ function switch_On$Off_style (condition,base,circle){
 function unlockGameMode(operator){
 
   // Si el nombre del modo jugado incluye DIFICIL 
-  if((nameMode.innerHTML.includes('DIFÍCIL') || nameMode.innerHTML.includes('MEDIO')) && (operator < 5) ){
+  if((nameMode.innerHTML.includes('DIFÍCIL') || nameMode.innerHTML.includes('MEDIO') || (nameMode.innerHTML.includes('FÁCIL')) && (operator < 5) ){
     // Se oculta el bloqueo del modo siguiente 
     // La lista empieza con el modo de Sustraccion 
     lockedModeIcon[operator].style.display = 'none';
