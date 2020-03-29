@@ -114,7 +114,7 @@ let currentExercise              = document.getElementById('current');
 
 
 // INDICES DE DIFICULTADES, FACIL, MEDIO, DIFICIL, UNIDAD e intervalo de LifeBar
-let  easy      = 0, easyUnity   = 10, easyLifeBar     = 200; 
+let  easy      = 0, easyUnity   = 5, easyLifeBar     = 200; 
 let medium     = 1, mediumUnity = 15, mediumLifeBar   = 100;
 let  hard      = 2, hardUnity   = 15, hardLifeBar     = 100;
 
@@ -366,7 +366,7 @@ function setAllVariables(opI,unity,condition,lifeBInterval,playMix){
 // Genera numeros aleatorios para las operaciones 
 function getRandomNumbers(){
 
-  let a = 10 + ((Math.ceil(Math.random()* numberUnity) + numberUnityCount)),
+  let a = 6 + ((Math.ceil(Math.random()* numberUnity) + numberUnityCount)),
       b = 5  + ((Math.floor(Math.random()* numberUnity) + numberUnityCount)),
       c = 2  + ((Math.floor(Math.random()* (numberUnity + numberUnityCount)))),
       d = 1  + ((Math.floor(Math.random()* (numberUnity + numberUnityCount )))),
@@ -906,13 +906,14 @@ function generateRankLetter(){
   // determinara un rango basado en la cantidad de fallos 
   switch (failed) {
     case 0:
-      if(acerted >= 25){
+      if(acerted >= 30){
         rankLetterStyle('SS','gold','goldenrod');
         unlockGameMode(operatorsIndex);
       }
       else{
-        rankLetterStyle('S','gold','goldenrod');
+        rankLetterStyle('S','gold','goldenrod'); 
         unlockGameMode(operatorsIndex);
+         
       }
       break;
     case 1:
