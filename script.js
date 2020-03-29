@@ -1422,7 +1422,7 @@ function switch_On$Off_style (condition,base,circle){
 function unlockGameMode(operator){
 
   // Si el nombre del modo jugado incluye DIFICIL 
-  if((nameMode.innerHTML.includes('DIFÍCIL') || nameMode.innerHTML.includes('MEDIO') || (nameMode.innerHTML.includes('FÁCIL')) && (operator < 5) ){
+  if((nameMode.innerHTML.includes('DIFÍCIL') || nameMode.innerHTML.includes('MEDIO') || nameMode.innerHTML.includes('FÁCIL')) && (operator < 5) ){
     // Se oculta el bloqueo del modo siguiente 
     // La lista empieza con el modo de Sustraccion 
     lockedModeIcon[operator].style.display = 'none';
