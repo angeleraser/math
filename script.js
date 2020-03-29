@@ -906,7 +906,7 @@ function generateRankLetter(){
   // determinara un rango basado en la cantidad de fallos 
   switch (failed) {
     case 0:
-      if(acerted >= 30){
+      if(acerted >= 25){
         rankLetterStyle('SS','gold','goldenrod');
         unlockGameMode(operatorsIndex);
       }
