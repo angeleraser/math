@@ -366,7 +366,7 @@ function setAllVariables(opI,unity,condition,lifeBInterval,playMix){
 // Genera numeros aleatorios para las operaciones 
 function getRandomNumbers(){
 
-  let a = 10 + ((Math.ceil(Math.random()* numberUnity) + numberUnityCount)),
+  let a = 10 + ((Math.ceil(Math.random() * numberUnity) + numberUnityCount)),
       b = 5  + ((Math.floor(Math.random()* numberUnity) + numberUnityCount)),
       c = 3  + ((Math.floor(Math.random()* (numberUnity + numberUnityCount)))),
       d = 2  + ((Math.floor(Math.random()* (numberUnity + numberUnityCount )))),
