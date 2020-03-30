@@ -143,7 +143,7 @@ const getTransparentColor = (mode) => `var(--${mode}Pause)`
  
 // Incremento de unidad, aciertos, fallos, puntuacion, temporizador,
 // combo, maxCombo, lifeBar y lista de ejercicios 
-let numberUnityCount = 0;
+let numberUnityCount = 1;
 let acerted = 0; 
 let failed = 0; 
 let scorePoints = 0; 
@@ -368,8 +368,8 @@ function getRandomNumbers(){
 
   let a = 10 + ((Math.ceil(Math.random() * numberUnity) + numberUnityCount)),
       b = 5  + ((Math.floor(Math.random()* numberUnity) + numberUnityCount)),
-      c = 3  + ((Math.floor(Math.random()* (numberUnity + numberUnityCount)))),
-      d = 2  + ((Math.floor(Math.random()* (numberUnity + numberUnityCount )))),
+      c = 2  + (Math.ceil(Math.random()*(numberUnity + numberUnityCount))),
+      d = 1  + (Math.ceil(Math.random()*(numberUnity + numberUnityCount))),
       e = null,
       f = null;
 
@@ -840,7 +840,7 @@ function playGame (){
 // Resetea todas las variables del juego
 function resetAllVariables (){
 
-  numberUnityCount = 0; //incrementa la unidad
+  numberUnityCount = 1; //incrementa la unidad
   temporizerTime = 95;     // tiempo de la partida
   gameTime = 90; //tiempo de juego
   lifeBarTime = 100;   // barra de vida
@@ -976,9 +976,10 @@ function setModeColorTheme(color){
 // Generador de numeros pares en el modo de division 
 function generateEvenNumbers (n1,n2){
 
+  let magicNumber = Math.ceil(Math.random()*9)
   // Para verificar si el numero es par 
   const isEven = (num)=>{
-    return num % 2  === 0 ? true : false;
+    return num % magicNumber  === 0 ? true : false;
   };
   // Condicion 
   let hasEvenNumbers = false;
@@ -986,14 +987,15 @@ function generateEvenNumbers (n1,n2){
   while(!hasEvenNumbers){
 
     // genera numeros aleatorio 
-    n1 =  Math.ceil(Math.random() * 50); // < ----- FIX THIS 
-    n2 =  Math.ceil(Math.random() * 50);
+    n1 = numberUnityCount + Math.ceil(Math.random() * (numberUnity*10)); 
+    n2 = numberUnityCount + Math.ceil(Math.random() * (numberUnity*10));
 
     // si el numero es par 
-    if(isEven(n1) && isEven(n2) && (n1%n2 == 0)){
+    if(isEven(n1) && isEven(n2) && (n1%n2 == 0) && (n1!==n2)){
       hasEvenNumbers = true;
     }
   }
+  console.log(magicNumber)
   return [...arguments]
 }
 
