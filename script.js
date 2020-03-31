@@ -413,7 +413,7 @@ function generateRandomExcercise(){
 
   // para evitar que las opciones se repitan
   const differentNumber = [(10),(-1),(-10)]; 
-  const differentNumber1 = [(5),(4),(10)]; 
+  const differentNumber1 = [(1),(2),(3),(1),(3),(2)]; 
   let differentNumberIndex = -1;
   const randomOptionNumber = (i) => (operationAnswer - differentNumber[i]);
 
@@ -1436,7 +1436,7 @@ function getDifferentOperationNumbers(arr1,arr2,arr2I){
   // Toma un array de los numeros de la operacion y resta cada uno con otro array de numeros
 
   let a = (arr1[0]+arr2[arr2I]);
-  let b = (arr1[1]+arr2[arr2I]);
+  let b = (arr1[1]+arr2[arr2I + 1]);
  
   // Retorna los numeros de la operacion alterados para las opciones 
   return [a,b];
