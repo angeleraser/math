@@ -413,7 +413,7 @@ function generateRandomExcercise(){
 
   // para evitar que las opciones se repitan
   const differentNumber = [(10),(-1),(-10)]; 
-  const differentNumber1 = [(1),(2),(3),(1),(3),(2)]; 
+  const differentNumber1 = [(1),(2),(2),(1),(3),(2)]; 
   let differentNumberIndex = -1;
   const randomOptionNumber = (i) => (operationAnswer - differentNumber[i]);
 
@@ -916,6 +916,7 @@ function generateRankLetter(){
       break;
     case 1:
       rankLetterStyle('A','lime')
+      unlockGameMode(operatorsIndex);
       break;
     case 2:
       rankLetterStyle('B','dodgerblue')
