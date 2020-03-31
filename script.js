@@ -413,7 +413,7 @@ function generateRandomExcercise(){
 
   // para evitar que las opciones se repitan
   const differentNumber = [(10),(-1),(-10)]; 
-  const differentNumber1 = [(3),(1),(2)]; 
+  const differentNumber1 = [(5),(4),(10)]; 
   let differentNumberIndex = -1;
   const randomOptionNumber = (i) => (operationAnswer - differentNumber[i]);
 
