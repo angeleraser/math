@@ -413,6 +413,7 @@ function generateRandomExcercise(){
 
   // para evitar que las opciones se repitan
   const differentNumber = [(10),(-1),(-10)]; 
+  const differentNumber1 = [(3),(1),(2)]; 
   let differentNumberIndex = -1;
   const randomOptionNumber = (i) => (operationAnswer - differentNumber[i]);
 
@@ -433,11 +434,8 @@ function generateRandomExcercise(){
       // para elegir un numero que haga diferente a las opciones  
       differentNumberIndex++;
 
-      // Genera numeros aleatorios para las operaciones cuando hay inverseIndex 
-      let randomNumbers = getRandomNumbers(numberUnity); 
-
       // Escribe las operaciones o respuestas que no son correctas 
-      writeOptionText(option, randomNumbers, randomOptionNumber(differentNumberIndex))
+      writeOptionText(option, getDifferentOperationNumbers(operationNumbers,differentNumber1,differentNumberIndex), randomOptionNumber(differentNumberIndex))
 
     }
   });
@@ -660,7 +658,7 @@ const lifeBarStatus = ()=>{
   //  si la barra de vida se descarga ... 
    if (lifeBarTime < 1) {
 
-    clearIntervals()
+   clearIntervals()
 
    play$Control_Sound(failSound,'play'); 
 
@@ -1430,4 +1428,17 @@ function unlockGameMode(operator){
     // La lista empieza con el modo de Sustraccion 
     lockedModeIcon[operator].style.display = 'none';
   }
+}
+
+// Esta funcion altera los numeros de la operacion cuando hay indice inverso y hace que no se repitan las opciones 
+function getDifferentOperationNumbers(arr1,arr2,arr2I){
+
+  // Toma un array de los numeros de la operacion y resta cada uno con otro array de numeros
+
+  let a = (arr1[0]+arr2[arr2I]);
+  let b = (arr1[1]+arr2[arr2I]);
+ 
+  // Retorna los numeros de la operacion alterados para las opciones 
+  return [a,b];
+
 }
