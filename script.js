@@ -115,7 +115,7 @@ let currentExercise              = document.getElementById('current');
 
 // INDICES DE DIFICULTADES, FACIL, MEDIO, DIFICIL, UNIDAD e intervalo de LifeBar
 let  easy      = 0, easyUnity   = 5, easyLifeBar      = 200; 
-let medium     = 1, mediumUnity = 15, mediumLifeBar   = 100;
+let medium     = 1, mediumUnity = 15, mediumLifeBar   = 120;
 let  hard      = 2, hardUnity   = 15, hardLifeBar     = 80;
 
 // Array con variables para modo FACIL y condicion del modo inverso
