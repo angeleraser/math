@@ -1,22 +1,28 @@
 <!DOCTYPE html>
-<html lang="en" prefix="og: http://ogp.me/ns#" >
+<html lang="en" prefix="og: http://ogp.me/ns#">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Se generan operaciones matemáticas sencillas de forma aleatoria. Tu puntuación final tendrá un rango basado en el rendimiento que hayas tenido durante la resolución de los ejercicios.">
+  <meta name="description"
+    content="Se generan operaciones matemáticas sencillas de forma aleatoria. Tu puntuación final tendrá un rango basado en el rendimiento que hayas tenido durante la resolución de los ejercicios.">
   <title>math!</title>
   <link rel="stylesheet" href="./normalize.css">
   <link rel="stylesheet" href="style.css">
   <link rel="icon" href="./icons/gameicon.png" type="image/png">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://mathit.netlify.com">
-  <meta property="og:image" content="https://mathit.netlify.com/icons/gamebanner.png">
-  <meta property="og:image:url" content="https://mathit.netlify.com/icons/gamebanner.png">
+  <meta property="og:image"
+    content="https://mathit.netlify.com/icons/gamebanner.png">
+  <meta property="og:image:url"
+    content="https://mathit.netlify.com/icons/gamebanner.png">
   <meta property="og:title" content="math!">
   <meta property="og:site_name" content="math!">
-  <meta property="og:description" content="Se generan operaciones matemáticas sencillas de forma aleatoria. Tu puntuación final tendrá un rango basado en el rendimiento que hayas tenido durante la resolución de los ejercicios.">
-  
+  <meta property="og:description"
+    content="Se generan operaciones matemáticas sencillas de forma aleatoria. Tu puntuación final tendrá un rango basado en el rendimiento que hayas tenido durante la resolución de los ejercicios.">
+
 </head>
+
 <body>
   <div id="container" class="container">
 
@@ -31,24 +37,26 @@
       <div class="main_screenButtons-container">
 
         <!-- Boton de JUGAR  -->
-       <div class="play button_main_screen" id="play">
+        <div class="play button_main_screen" id="play">
 
-         <img class="icon-button" src="./icons/play-button-1.png" alt="" id="play-icon">
+          <img class="icon-button" src="./icons/play-button-1.png" alt=""
+            id="play-icon">
 
-         <div class="button_text ">¡JUGAR!</div>
+          <div class="button_text ">¡JUGAR!</div>
         </div>
 
         <!-- Boton de CONFIGURACION  -->
-       <div class="settings button_main_screen" id="settings">
-         <img class="icon-button" src="./icons/settings-5.png" alt="" srcset="" id="settings-icon">
-         <div class="button_text">CONFIGURACIÓN</div>
-       </div>
+        <div class="settings button_main_screen" id="settings">
+          <img class="icon-button" src="./icons/settings-5.png" alt="" srcset=""
+            id="settings-icon">
+          <div class="button_text">CONFIGURACIÓN</div>
+        </div>
 
-       <!-- Boton de INFORMACION  -->
-       <div class="info button_main_screen" id="info">
-         <img class="icon-button" src="./icons/info.png" alt="" id="info-icon">
-         <div class="button_text">INFORMACIÓN</div>
-       </div>
+        <!-- Boton de INFORMACION  -->
+        <div class="info button_main_screen" id="info">
+          <img class="icon-button" src="./icons/info.png" alt="" id="info-icon">
+          <div class="button_text">INFORMACIÓN</div>
+        </div>
       </div>
 
       <!-- Desarrollado por ...  -->
@@ -64,16 +72,18 @@
       <div class="choosenModeText">Elige un modo de juego
 
         <!-- Aqui esta el boton para devolverse a la pantala inicial  -->
-        <div id="back-menu3" class="back-ButtonGameModeScreen back-button"> <img src="./icons/exit-2.png" alt="" id="backGameModeScreen_icon" class="icon"></div>
-        
+        <div id="back-menu3" class="back-ButtonGameModeScreen back-button"> <img
+            src="./icons/exit-2.png" alt="" id="backGameModeScreen_icon"
+            class="icon"></div>
+
       </div>
 
       <!-- MODOS DE JUEGO  -->
-       <div class="game-modes-container">
-         <!-- ADICION  -->
-         <div class="button adicion">
+      <div class="game-modes-container">
+        <!-- ADICION  -->
+        <div class="button adicion">
           <img class="dif-icon" src="./icons/grid.png" alt="" srcset="">
-          <div class="dif-text gameMode">ADICIÓN</div> 
+          <div class="dif-text gameMode">ADICIÓN</div>
           <div class="dif-container">
             <div class="easy dif">FACIL
             </div>
@@ -82,60 +92,65 @@
             <div class="hard dif">DIFICIL
             </div>
           </div>
-         </div>
+        </div>
 
-         <!-- SUSTRACCION  -->
-         <div class="button sustraccion">
-          <div class="locked-mode"><img src="./icons/locked.png" alt="" class="icon"></div>
+        <!-- SUSTRACCION  -->
+        <div class="button sustraccion">
+          <div class="locked-mode"><img src="./icons/locked.png" alt=""
+              class="icon"></div>
           <img class="dif-icon" src="./icons/grid.png" alt="" srcset="">
-          <div class="dif-text gameMode">SUSTRACCIÓN</div> 
+          <div class="dif-text gameMode">SUSTRACCIÓN</div>
           <div class="dif-container">
             <div class="easy dif">FACIL</div>
             <div class="medium dif">MEDIO</div>
             <div class="hard dif">DIFICIL</div>
           </div>
-         </div>
+        </div>
 
-         <!-- MULTIPLICACION  -->
-         <div class="button multiplicacion">
-          <div class="locked-mode"><img src="./icons/locked.png" alt="" class="icon"></div>
+        <!-- MULTIPLICACION  -->
+        <div class="button multiplicacion">
+          <div class="locked-mode"><img src="./icons/locked.png" alt=""
+              class="icon"></div>
           <img class="dif-icon" src="./icons/grid.png" alt="" srcset="">
-          <div class="dif-text gameMode">MULTIPLICACIÓN</div> 
+          <div class="dif-text gameMode">MULTIPLICACIÓN</div>
           <div class="dif-container">
             <div class="easy dif">FACIL</div>
             <div class="medium dif">MEDIO</div>
             <div class="hard dif">DIFICIL</div>
           </div>
-         </div>
-         <!-- DIVISION -->
-         <div class="button division">
-          <div class="locked-mode"><img src="./icons/locked.png" alt="" class="icon"></div>
+        </div>
+        <!-- DIVISION -->
+        <div class="button division">
+          <div class="locked-mode"><img src="./icons/locked.png" alt=""
+              class="icon"></div>
           <img class="dif-icon" src="./icons/grid.png" alt="" srcset="">
-          <div class="dif-text gameMode">DIVISIÓN</div> 
+          <div class="dif-text gameMode">DIVISIÓN</div>
           <div class="dif-container">
             <div class="easy dif">FACIL</div>
             <div class="medium dif">MEDIO</div>
             <div class="hard dif">DIFICIL</div>
           </div>
-         </div>
+        </div>
 
-         <!-- Aleatorio -->
-         <div class="button aleatorio">
-          <div class="locked-mode"><img src="./icons/locked.png" alt="" class="icon"></div>
+        <!-- Aleatorio -->
+        <div class="button aleatorio">
+          <div class="locked-mode"><img src="./icons/locked.png" alt=""
+              class="icon"></div>
           <img class="dif-icon" src="./icons/grid.png" alt="" srcset="">
-          <div class="dif-text gameMode">ALEATORIO</div> 
+          <div class="dif-text gameMode">ALEATORIO</div>
           <div class="dif-container">
             <div class="easy dif">FACIL</div>
             <div class="medium dif">MEDIO</div>
             <div class="hard dif">DIFICIL</div>
           </div>
-         </div>
+        </div>
 
-         <!-- Boton para ir al Historial  -->
-         <div id="score-board-button" class="score-screen-button button"> Historial
+        <!-- Boton para ir al Historial  -->
+        <div id="score-board-button" class="score-screen-button button">
+          Historial
           <img class="arrow-icon" src="./icons/leftArrow.png" alt="">
-         </div>
-       </div>
+        </div>
+      </div>
     </div>
 
 
@@ -165,7 +180,8 @@
         <div class="multiplicador" id="multiplicador"></div>
 
         <!-- Boton de pausa  -->
-        <div class="pauseButton button" id="pauseButton"><img src="./icons/pause-1.png" alt="" class="pauseIcon"></div>
+        <div class="pauseButton button" id="pauseButton"><img
+            src="./icons/pause-1.png" alt="" class="pauseIcon"></div>
       </div>
 
       <!-- Contenedor de opciones  -->
@@ -173,37 +189,37 @@
 
         <!-- Opcion 1  -->
         <div class="answer-box">
-            <div class="answer"> 1
+          <div class="answer"> 1
+          </div>
+          <div id="points" class="points-box">
+            <div class="points">
             </div>
-            <div id="points" class="points-box">
-              <div class="points">
-              </div>
-            </div>
+          </div>
         </div>
 
         <!-- Opcion 2  -->
-        <div class="answer-box"> 
+        <div class="answer-box">
           <div class="answer">2</div>
           <div id="points" class="points-box">
-            <div class="points"> 
+            <div class="points">
             </div>
           </div>
-      </div>
+        </div>
 
-      <!-- Opcion 3  -->
+        <!-- Opcion 3  -->
         <div class="answer-box">
           <div class="answer">3</div>
           <div id="points" class="points-box">
-            <div class="points"> 
+            <div class="points">
             </div>
           </div>
-      </div>
+        </div>
 
-      <!-- Opcion 4  -->
+        <!-- Opcion 4  -->
         <div class="answer-box">
           <div class="answer">4</div>
           <div id="points" class="points-box">
-            <div class="points"> 
+            <div class="points">
             </div>
           </div>
         </div>
@@ -218,26 +234,28 @@
       <div class="tableTitle">Historial de puntajes</div>
 
       <!-- Boton de regresar  -->
-      <div id="back-menu4" class="back-ButtonGameModeScreen back-button"> <img src="./icons/exit-2.png" class="icon"></div>
+      <div id="back-menu4" class="back-ButtonGameModeScreen back-button"> <img
+          src="./icons/exit-2.png" class="icon"></div>
 
       <!-- Titulos de la lista  -->
-     <div class="scoreBoardList button">
-      <div class="gameModeName item">MODO DE JUEGO</div>
-      <div class="gameScore item ">PUNTUACION</div>
-      <div class="rankLetter item">RANGO</div>
-     </div>
+      <div class="scoreBoardList button">
+        <div class="gameModeName item">MODO DE JUEGO</div>
+        <div class="gameScore item ">PUNTUACION</div>
+        <div class="rankLetter item">RANGO</div>
+      </div>
 
-     <!-- Contendor de los puntajes   -->
-     <div class="scoreBoardContainer">
-       <!-- Aqui se añadiran elementos creados con JavaScript   -->
-     </div>
+      <!-- Contendor de los puntajes   -->
+      <div class="scoreBoardContainer">
+        <!-- Aqui se añadiran elementos creados con JavaScript   -->
+      </div>
     </div>
 
     <!-- PANTALLA DE CONFIGURACION -->
     <div class="game_container screen settingScreen">
 
       <!-- Boton de regresar  -->
-      <div id="back-menu5" class="back-ButtonGameModeScreen back-button"> <img src="./icons/exit-2.png" alt="" class="icon"></div>
+      <div id="back-menu5" class="back-ButtonGameModeScreen back-button"> <img
+          src="./icons/exit-2.png" alt="" class="icon"></div>
 
       <!-- Titulo  -->
       <div class="configurationTitle">CONFIGURACIONES</div>
@@ -246,7 +264,7 @@
       <div class="settingsContainer">
 
         <!-- Swtich 1  -->
-        <div class="configItem">Musica de inicio 
+        <div class="configItem">Musica de inicio
           <div class="switchButtonContainer">
             <div class="switchBase" id="mainThemeMusicSwitch">
               <div class="switchCircle"></div>
@@ -281,10 +299,12 @@
     <div class="retry-screen screen game_container">
 
       <!-- Boton de continuar  -->
-      <div id="continue-button" class="button_retryScreen button">CONTINUAR</div>
+      <div id="continue-button" class="button_retryScreen button">CONTINUAR
+      </div>
 
       <!-- Boton de reintentar  -->
-      <div id="retry-button" class="retry-button button_retryScreen button">REINTENTAR</div>
+      <div id="retry-button" class="retry-button button_retryScreen button">
+        REINTENTAR</div>
 
       <!-- Boton de regresar al menu  -->
       <div id="back-menu" class="button_retryScreen button">MENU</div>
@@ -316,7 +336,7 @@
 
           <!-- MAX-COMBO  -->
           <div class="combo score">
-            MAX-COMBO 
+            MAX-COMBO
             <div class="number" id="combo">0</div>
           </div>
 
@@ -330,91 +350,119 @@
         <!-- RANGO  -->
         <div class="rank">
           <div class="rank-text">RANGO</div>
-          <div id="rank-letter"class="rank-letter"></div>
+          <div id="rank-letter" class="rank-letter"></div>
         </div>
       </div>
       <!-- Boton de regresar  -->
-      <div id="back-menu2" class="button_finalScreen button"><img class="icon" src="./icons/menu.png" alt="" srcset=""></div>
+      <div id="back-menu2" class="button_finalScreen button"><img class="icon"
+          src="./icons/menu.png" alt="" srcset=""></div>
       <!-- Boton de reintentar   -->
-      <div id="retry-button2" class="retry-button button_finalScreen button"><img class="icon" src="./icons/replay.png" alt="" srcset=""></div>
+      <div id="retry-button2" class="retry-button button_finalScreen button">
+        <img class="icon" src="./icons/replay.png" alt="" srcset=""></div>
     </div>
 
     <!-- PANTALLA DE MAS INFORMACION -->
     <div class="game_container screen infoScreen" id="infoScreen">
 
       <!-- Boton de regresar  -->
-      <div id="back-menu6" class="back-ButtonGameModeScreen back-button"> <img src="./icons/exit-2.png" class="icon"></div>
+      <div id="back-menu6" class="back-ButtonGameModeScreen back-button"> <img
+          src="./icons/exit-2.png" class="icon"></div>
 
       <div class="configurationTitle">INFORMACIÓN</div>
 
 
       <!-- Contenedor de la informacion   -->
-     <div class="infoContainer">
+      <div class="infoContainer">
 
-      <!-- Como se juega ? -->
-      <div class="howToPlay infoItem"><h1 class="infoTitle">¿Cómo se juega?</h1>
-        <p class="infoText">Se generan operaciones matemáticas sencillas de forma aleatoria. Tu puntuación final tendrá un rango basado en el rendimiento que hayas tenido durante la resolución de los ejercicios.
+        <!-- Como se juega ? -->
+        <div class="howToPlay infoItem">
+          <h1 class="infoTitle">¿Cómo se juega?</h1>
+          <p class="infoText">Se generan operaciones matemáticas sencillas de
+            forma aleatoria. Tu puntuación final tendrá un rango basado en el
+            rendimiento que hayas tenido durante la resolución de los
+            ejercicios.
 
-        ¡Obten un rango "SS" o "S" en nivel <strong>fácil, medio o difícil</strong> de cada modo para desbloquear los demás!
-        </p></div>
+            ¡Obten un rango "SS" o "S" en nivel <strong>fácil, medio o
+              difícil</strong> de cada modo para desbloquear los demás!
+          </p>
+        </div>
 
         <!-- Cancion del juego  -->
-      <div class="musicBy infoItem">
-        <h1 class="infoTitle">Soundtrack</h1>
-        <div class="info_item_container">
-          <i>-Electroman Adventures-</i> <span class="autor">by Waterflame</span>
-          <a target="_blank" href="https://newgrounds.com/audio/listen/479319">¡Visitala en newgrounds.com!</a>
+        <div class="musicBy infoItem">
+          <h1 class="infoTitle">Soundtrack</h1>
+          <div class="info_item_container">
+            <i>-Electroman Adventures-</i> <span class="autor">by
+              Waterflame</span>
+            <a target="_blank"
+              href="https://newgrounds.com/audio/listen/479319">¡Visitala en
+              newgrounds.com!</a>
+          </div>
         </div>
-      </div>
 
-      <!-- Redes sociales  -->
-      <div class="socialLinks infoItem"> 
+        <!-- Redes sociales  -->
+        <div class="socialLinks infoItem">
           <h1 class="infoTitle">Mis redes sociales</h1>
           <div class="socialLinks-icons">
-            <a target="_blank" href="https://facebook.com/angeleraserr"><img src="./icons/icons8-facebook-24.png" alt=""></a>
-            <a target="_blank" href="https://twitter.com/angeleraser"><img src="./icons/icons8-twitter-24.png" alt=""></a>
-            <a target="_blank" href=""><img src="./icons/icons8-google-24.png" alt=""></a>
+            <a target="_blank" href="https://facebook.com/angeleraserr"><img
+                src="./icons/icons8-facebook-24.png" alt=""></a>
+            <a target="_blank" href="https://twitter.com/angeleraser"><img
+                src="./icons/icons8-twitter-24.png" alt=""></a>
+            <a target="_blank" href=""><img src="./icons/icons8-google-24.png"
+                alt=""></a>
           </div>
-      </div> 
-     </div>
+        </div>
+      </div>
     </div>
   </div>
 
   <!-- Musica del nivel  -->
-  <audio preload="auto" id="levelsMusic" src="./sounds/479319_-Electroman-adventures-.mp3"></audio>
+  <audio preload="auto" id="levelsMusic"
+    src="./sounds/479319_-Electroman-adventures-.mp3"></audio>
 
   <!-- Sonido de la pantalla final de puntuacion  -->
-  <audio preload="auto" class="soundFX" src="./sounds/applause.mp3" id="finalScreenMusic"></audio>
+  <audio preload="auto" class="soundFX" src="./sounds/applause.mp3"
+    id="finalScreenMusic"></audio>
 
   <!-- Sonido de fallo  -->
-  <audio preload="auto" class="soundFX" src="./sounds/failsound.mp3" id="failSound"></audio>
+  <audio preload="auto" class="soundFX" src="./sounds/failsound.mp3"
+    id="failSound"></audio>
 
   <!-- Click normal  -->
-  <audio preload="auto" class="soundFX"src="./sounds/click-short-confirm.mp3" id="gameModeClickSound"></audio>
+  <audio preload="auto" class="soundFX" src="./sounds/click-short-confirm.mp3"
+    id="gameModeClickSound"></audio>
 
   <!-- menuback  -->
-  <audio preload="auto" class="soundFX" src="./sounds/menuback.mp3" id="menu-backSound"></audio>
+  <audio preload="auto" class="soundFX" src="./sounds/menuback.mp3"
+    id="menu-backSound"></audio>
 
   <!-- Click normal 2  -->
-  <audio preload="auto" class="soundFX" src="./sounds/menuhit.mp3" id="menuNormalClick"></audio>
+  <audio preload="auto" class="soundFX" src="./sounds/menuhit.mp3"
+    id="menuNormalClick"></audio>
 
   <!-- Click en los iconos de dificultad  -->
-  <audio preload="auto" class="soundFX" src="./sounds/menuhit2.mp3" id="iconListSound"></audio>
+  <audio preload="auto" class="soundFX" src="./sounds/menuhit2.mp3"
+    id="iconListSound"></audio>
 
   <!-- Tema de inicio  -->
-  <audio preload="auto" loop='true' src="./sounds/menutheme.mp3" id="menuthemeMusic" autoplay></audio>
+  <audio preload="auto" loop='true' src="./sounds/menutheme.mp3"
+    id="menuthemeMusic" autoplay></audio>
 
   <!-- Opcion correcta  -->
-  <audio preload="auto" class="soundFX" src="./sounds/correctOption.mp3" id="correctOptionClick"></audio>
+  <audio preload="auto" class="soundFX" src="./sounds/correctOption.mp3"
+    id="correctOptionClick"></audio>
 
   <!-- Combo break  -->
-  <audio preload="auto" class="soundFX" src="./sounds/combobreak.mp3" id="comboBreakSound"></audio>
+  <audio preload="auto" class="soundFX" src="./sounds/combobreak.mp3"
+    id="comboBreakSound"></audio>
 
   <!-- Opcion incorrecta  -->
-  <audio preload="auto" class="soundFX" src="./sounds/wrongOption.mp3" id="wrongOptionClick"></audio>
+  <audio preload="auto" class="soundFX" src="./sounds/wrongOption.mp3"
+    id="wrongOptionClick"></audio>
 
   <!-- Pausa  -->
-  <audio preload="auto" class="soundFX" src="./sounds/pause-back.mp3" id="backButtonPause"></audio>
-  <script src="script.js"></script> 
+  <audio preload="auto" class="soundFX" src="./sounds/pause-back.mp3"
+    id="backButtonPause"></audio>
+  <script src="script.js"></script>
 </body>
+
 </html>
